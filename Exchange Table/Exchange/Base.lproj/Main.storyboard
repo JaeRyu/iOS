@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="S6n-yZ-m3f">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="WBL-qy-fd1">
+            <objects>
+                <navigationController id="S6n-yZ-m3f" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M5t-kW-h5B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="D4V-TH-MsJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hk1-Lv-nRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-905" y="124"/>
+        </scene>
+        <!--환율계산기-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Exchange" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돈 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-3E-9RP">
+                                <rect key="frame" x="67" y="82" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달러($) : 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3m-cv-wLP">
+                                <rect key="frame" x="67" y="122" width="240" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엔화(￥) : 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvc-Ow-wxa">
+                                <rect key="frame" x="67" y="182" width="240" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프랑(F) : 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24w-4A-Sxg">
+                                <rect key="frame" x="67" y="249" width="240" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000.0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uiQ-Hy-zsU">
+                                <rect key="frame" x="106" y="77" width="201" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.01" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="uFE-tf-qGD">
+                                <rect key="frame" x="65" y="144" width="244" height="31"/>
+                                <connections>
+                                    <action selector="changeValDollarWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="FF6-8X-05M"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.0099999997764825821" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="jle-eJ-8XC">
+                                <rect key="frame" x="65" y="211" width="244" height="31"/>
+                                <connections>
+                                    <action selector="changeValYenWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="NMk-Wc-h61"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.0099999997764825821" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-Va-cl3">
+                                <rect key="frame" x="65" y="278" width="244" height="31"/>
+                                <connections>
+                                    <action selector="changeValFrancWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="hTc-Cd-4aD"/>
+                                </connections>
+                            </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-sG-6sK">
+                                <rect key="frame" x="45" y="339" width="286" height="291"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OP1-39-wGR">
+                                        <rect key="frame" x="0.0" y="28" width="286" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="OP1-39-wGR" id="1yM-Aj-8PF">
+                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cft-r4-PRe">
+                                        <rect key="frame" x="0.0" y="72" width="286" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cft-r4-PRe" id="LYq-rE-FPY">
+                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hpl-CW-XDJ">
+                                        <rect key="frame" x="0.0" y="116" width="286" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hpl-CW-XDJ" id="2pf-nv-EGU">
+                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5N2-Lh-c5c"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="A39-8S-VoN"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-lB-cQL">
+                                <rect key="frame" x="173" y="308" width="30" height="30"/>
+                                <state key="normal" title="계산"/>
+                                <connections>
+                                    <action selector="pressCalWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ADR-wA-cAO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.86280941240832709" blue="0.29145739762269762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gMg-Va-cl3" firstAttribute="top" secondItem="24w-4A-Sxg" secondAttribute="bottom" constant="8" symbolic="YES" id="1CY-ug-W6P"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U5i-sG-6sK" secondAttribute="bottom" constant="37" id="1RO-8w-ph1"/>
+                            <constraint firstItem="uFE-tf-qGD" firstAttribute="leading" secondItem="pvc-Ow-wxa" secondAttribute="leading" id="2fA-Ci-IcL"/>
+                            <constraint firstItem="U5i-sG-6sK" firstAttribute="top" secondItem="i7a-lB-cQL" secondAttribute="bottom" constant="1" id="3P5-Ia-4Wv"/>
+                            <constraint firstItem="uiQ-Hy-zsU" firstAttribute="trailing" secondItem="W3m-cv-wLP" secondAttribute="trailing" id="5jD-fM-Yal"/>
+                            <constraint firstItem="W3m-cv-wLP" firstAttribute="top" secondItem="uiQ-Hy-zsU" secondAttribute="bottom" constant="15" id="5rO-LE-jQI"/>
+                            <constraint firstItem="24w-4A-Sxg" firstAttribute="leading" secondItem="gMg-Va-cl3" secondAttribute="leading" id="6I0-aK-rCg"/>
+                            <constraint firstItem="jle-eJ-8XC" firstAttribute="leading" secondItem="24w-4A-Sxg" secondAttribute="leading" id="6J5-e3-tEi"/>
+                            <constraint firstItem="jle-eJ-8XC" firstAttribute="trailing" secondItem="24w-4A-Sxg" secondAttribute="trailing" id="9Cb-PL-0AW"/>
+                            <constraint firstItem="uiQ-Hy-zsU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="HIx-pF-hdO"/>
+                            <constraint firstItem="uFE-tf-qGD" firstAttribute="trailing" secondItem="pvc-Ow-wxa" secondAttribute="trailing" id="Ieu-Jw-RSq"/>
+                            <constraint firstItem="uiQ-Hy-zsU" firstAttribute="leading" secondItem="L4j-3E-9RP" secondAttribute="trailing" constant="15" id="JnH-ZE-Atl"/>
+                            <constraint firstItem="uFE-tf-qGD" firstAttribute="top" secondItem="W3m-cv-wLP" secondAttribute="bottom" constant="1" id="Nda-Jr-3PR"/>
+                            <constraint firstItem="L4j-3E-9RP" firstAttribute="leading" secondItem="W3m-cv-wLP" secondAttribute="leading" id="OFh-VY-LfR"/>
+                            <constraint firstItem="W3m-cv-wLP" firstAttribute="leading" secondItem="uFE-tf-qGD" secondAttribute="leading" id="PaE-yG-8Sf"/>
+                            <constraint firstItem="24w-4A-Sxg" firstAttribute="top" secondItem="jle-eJ-8XC" secondAttribute="bottom" constant="8" symbolic="YES" id="T5B-G1-qzg"/>
+                            <constraint firstItem="24w-4A-Sxg" firstAttribute="trailing" secondItem="gMg-Va-cl3" secondAttribute="trailing" id="TbC-n7-z5k"/>
+                            <constraint firstItem="i7a-lB-cQL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="173" id="eMZ-5j-ybo"/>
+                            <constraint firstItem="L4j-3E-9RP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="gfN-Uw-TfG"/>
+                            <constraint firstItem="jle-eJ-8XC" firstAttribute="top" secondItem="pvc-Ow-wxa" secondAttribute="bottom" constant="8" symbolic="YES" id="hDJ-sn-AMZ"/>
+                            <constraint firstItem="U5i-sG-6sK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haY-a2-4Sf"/>
+                            <constraint firstItem="L4j-3E-9RP" firstAttribute="centerY" secondItem="uiQ-Hy-zsU" secondAttribute="centerY" id="hg7-w2-G7p"/>
+                            <constraint firstItem="W3m-cv-wLP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pG5-S6-sYg"/>
+                            <constraint firstItem="W3m-cv-wLP" firstAttribute="trailing" secondItem="uFE-tf-qGD" secondAttribute="trailing" id="raI-0l-ciC"/>
+                            <constraint firstItem="pvc-Ow-wxa" firstAttribute="leading" secondItem="jle-eJ-8XC" secondAttribute="leading" id="sE9-xN-Obc"/>
+                            <constraint firstItem="pvc-Ow-wxa" firstAttribute="trailing" secondItem="jle-eJ-8XC" secondAttribute="trailing" id="tLv-z7-vWf"/>
+                            <constraint firstItem="i7a-lB-cQL" firstAttribute="top" secondItem="gMg-Va-cl3" secondAttribute="bottom" id="wNh-8O-kRI"/>
+                            <constraint firstItem="U5i-sG-6sK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="whq-IG-uQk"/>
+                            <constraint firstItem="pvc-Ow-wxa" firstAttribute="top" secondItem="uFE-tf-qGD" secondAttribute="bottom" constant="8" symbolic="YES" id="zjF-sN-dji"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hSu-2X-aay" appends="YES" id="22v-u2-McI"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="환율계산기" id="zPX-Ej-0M7"/>
+                    <connections>
+                        <outlet property="field" destination="uiQ-Hy-zsU" id="tRJ-Ok-GHz"/>
+                        <outlet property="labelDollar" destination="W3m-cv-wLP" id="9qZ-sy-NaC"/>
+                        <outlet property="labelFranc" destination="24w-4A-Sxg" id="L21-Fc-fgB"/>
+                        <outlet property="labelYen" destination="pvc-Ow-wxa" id="5st-zM-DVO"/>
+                        <outlet property="sliderDollar" destination="uFE-tf-qGD" id="sN9-k4-ws2"/>
+                        <outlet property="sliderFranc" destination="gMg-Va-cl3" id="7Pc-IL-0SS"/>
+                        <outlet property="sliderYen" destination="jle-eJ-8XC" id="QgA-DF-8Eu"/>
+                        <outlet property="table" destination="U5i-sG-6sK" id="K8a-oo-Hzb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hSu-2X-aay">
+                    <connections>
+                        <action selector="pressAnyWithSender:" destination="BYZ-38-t0r" id="sfn-Hy-xUB"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
